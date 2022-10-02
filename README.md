@@ -52,9 +52,9 @@ O diagrama a seguir ilustra a Interface homem-máquina (IHM) prevista:
 
 ![](oled.png)
 
-### firmware
+### Firmware
 
-Vocês devem desenvolver o firwamre como indicado a seguir:
+Vocês devem desenvolver o firmware como indicado a seguir:
 
 ![](firmware.png)
 
@@ -85,3 +85,13 @@ Onde:
   - Toda vez que estourar o alarme, liberar semáforo `xSemaphoreRTT`
 
 ![](rtt.jpg)
+
+### Dicas
+
+1. Comece pelo OLED, `task_modo`, callback dos botões, `xQueueModo`
+1. Crie a fila `xQueueSteps` e comece enviar o dado dos passos
+1. Crie a `task_motor`
+1. Inicialize os pinos do motor
+1. Receba os dados da fila `xQueueSteps` e acione o motor
+
+Para acionar o motor o jeito mais fácil é: criar uma função que recebe uma máscara com as fases e aciona o motor conforme o recebido.
