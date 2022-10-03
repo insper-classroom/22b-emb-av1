@@ -57,10 +57,10 @@ A interface do motor de passos com o microcontrolador vai se dar através do aci
 
 A entrega deve ser um sistema que permite controlarmos o motor de passos, fazendo-o girar em valores de ângulo pré estabelecidos. O controle do sistema será realizado via a placa OLED e seus botões (não vamos usar os LEDs). O display deve exibir qual foi a opção selecionada:
 
-- BTN 1: Gira o motor 90° no sentido horário
-- BTN 2: Gira o motor 360° no sentido horário
-- BTN 3: Gira o motor 90° no sentido anti-horário
-
+- BTN 1: Gira o motor 45° no sentido horário
+- BTN 2: Gira o motor 90° no sentido horário
+- BTN 3: Gira o motor 180° no sentido horário
+- 
 O diagrama a seguir ilustra a Interface homem-máquina (IHM) prevista:
 
 ![](oled.png)
@@ -81,24 +81,24 @@ Onde:
 
   - devem ser configurados para funcionar com `callback`
   - devem enviar por uma fila `xQueueModo` um inteiro que representa o ângulo de rotação e a direção
-    - exemplo: -90, +360, +90, ....
+    - exemplo: 45, 90, 180, ....
 
 - `task_modo`
   - Responsável por ler a opcão do usuário via `xQueueModo`
   - Deve fazer a conta e traduzir ângulo em passos
   - Enviar a informação para a fila `xQueueSteps` no seguinte formato `(direção)(número de passos)`:
-    - exemplo para -90 -> `(-90 / 0,17578125)` -> `-512` passos
-    - o dado que vai para fila é `-512`
+    - exemplo para 90 -> `(90 / 0,17578125)` -> `512` passos
+    - o dado que vai para fila é `512`
   - Exibe no OLED o valor selecionado em graus
+  
 - `task_motor`
-
   - Recebe pela fila a quantidade de passos e o sentido de rotação e aciona o motor
   - Deve usar o RTT para calcular o tempo que cada fase fica acionada (velocidade do motor)
     - A comunicação RTT e task deve ser feita via semáforo `xSemaphoreRTT`
 
 - RTT
   - Irá dar a base de tempo que cada fase fica acionada
-  - Configurado em modo alarme para contar 10ms
+  - Configurado em modo alarme para contar 5ms
   - Toda vez que estourar o alarme, liberar semáforo `xSemaphoreRTT`
 
 ![](rtt.jpg)
@@ -110,3 +110,4 @@ Onde:
 1. Crie a fila `xQueueSteps` e comece enviar o dado dos passos
 1. Crie a `task_motor`
 1. Receba os dados da fila `xQueueSteps` e acione o motor
+1. Criei O rtt para operar com IRQ a cada 5ms
