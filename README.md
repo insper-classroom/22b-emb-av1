@@ -47,8 +47,7 @@ A interface do motor de passos com o microcontrolador vai se dar através do aci
 - Escolha quatro pinos do uC e conecte as fases.
 
 
-
-![image alt <>](labels.svg)
+<img src="labels.svg" alt="drawing" width="200"/>
 
 
 
