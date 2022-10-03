@@ -29,6 +29,7 @@ O motor de passo é um motor elétrico sem bobinas (_brushless_) que permite mov
 O `gif` a seguir ilustra um motor de passos em movimento, no caso ele possui quatro fases:
 
 ![image alt <](https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/StepperMotor.gif/400px-StepperMotor.gif)
+![image alt >](driver_motordepasso.gif)
 
 Notem que para fazermos o motor girar é preciso acionar as fases em sequência: `1000` -> `0100` -> `0010` -> `0001` e então repetir esse ciclo, X vezes até obtermos o ângulo de deslocamento esperado. Se o movimento for o oposto: `1000` -> `0001` -> `0010` -> `0100` -> ... o motor irá girar para o lado contrário.
 
