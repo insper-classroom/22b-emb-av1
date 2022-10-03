@@ -26,7 +26,7 @@ Motor de passos:
 
 O motor de passo é um motor elétrico sem bobinas (_brushless_) que permite movimentarmos o rotor (a parte que gira) em passos. Os passos são valores em graus que dependem da construção do motor e de como ele é acionado.
 
-O `gif` a seguir ilustra um motor de passos em movimento, no caso ele possui quatro fases. Ao lado está o gif que mostra o driver e o motor utilizados nessa avaliação:
+O `gif` a seguir ilustra um motor de passos em movimento, no caso ele possui quatro fases. Ao lado está o `gif` que mostra o driver e o motor utilizados nessa avaliação:
 
 ![image alt <](https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/StepperMotor.gif/400px-StepperMotor.gif)
 ![image alt >](driver_motordepasso.gif)
