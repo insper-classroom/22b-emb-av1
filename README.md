@@ -89,10 +89,10 @@ Onde:
 
 ### Dicas
 
-1. Comece pelo OLED, `task_modo`, callback dos botões, `xQueueModo`
+1. Inicialize os pinos do motor, testando os movimentos, fazendo-o girar no sentiro horário e anti-horário
+1. Faça o teste do OLED, `task_modo`, callback dos botões, `xQueueModo`
 1. Crie a fila `xQueueSteps` e comece enviar o dado dos passos
 1. Crie a `task_motor`
-1. Inicialize os pinos do motor
 1. Receba os dados da fila `xQueueSteps` e acione o motor
 
 Para acionar o motor o jeito mais fácil é: criar uma função que recebe uma máscara com as fases e aciona o motor conforme o recebido.
