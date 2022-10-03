@@ -105,7 +105,7 @@ Onde:
 
 ### Dicas
 
-1. Inicialize os pinos do motor, testando os movimentos, fazendo-o girar no sentiro horário e anti-horário
+1. Inicialize os pinos do motor, testando os movimentos, fazendo-o girar no sentiro horário
 1. Faça o teste do OLED, `task_modo`, callback dos botões, `xQueueModo`
 1. Crie a fila `xQueueSteps` e comece enviar o dado dos passos
 1. Crie a `task_motor`
