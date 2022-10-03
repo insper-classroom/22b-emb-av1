@@ -18,7 +18,7 @@ freeRTOS:
 
 Motor de passos:
 
-- Motor de passo 5V 28BYJ-48
+- Motor de passo *28BYJ-48*
   - Quatro fases
   - `0,17578125` graus por passo / `2048` passos para completar `360`º
 
