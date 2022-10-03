@@ -43,10 +43,14 @@ A interface do motor de passos com o microcontrolador vai se dar através do aci
 
 ![](uc-motor.png)
 
-- Alimente o motor com +5v e GND.
+- Alimente o motor com +5V e GND.
 - Escolha quatro pinos do uC e conecte as fases.
 
+
+
 ![image alt <>](labels.svg)
+
+
 
 ### Funcionalidade
 
