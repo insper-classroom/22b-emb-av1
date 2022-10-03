@@ -110,11 +110,3 @@ Onde:
 1. Crie a fila `xQueueSteps` e comece enviar o dado dos passos
 1. Crie a `task_motor`
 1. Receba os dados da fila `xQueueSteps` e acione o motor
-
-Para acionar o motor o jeito mais fácil é: criar uma função que recebe uma máscara com as fases e aciona o motor conforme o recebido.
-
-```
-int mask_dir0[] = {1, 2, 4, 8};
-```
-
-- RTT inicialize ele para gerar uma IRQ a cada `10ms`.
