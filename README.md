@@ -70,7 +70,7 @@ Onde:
   - Responsável por ler a opcão do usuário via `xQueueModo`
   - Deve fazer a conta e traduzir ângulo em passos
   - Enviar a informação para a fila `xQueueSteps` no seguinte formato `(direção)(número de passos)`:
-    - exemplo para -90 -> -90 / `0,17578125` -> `512` passos
+    - exemplo para -90 -> (-90 / `0,17578125)` -> `-512` passos
     - o dado que vai para fila é `-512`
   - Exibe no OLED o valor selecionado em graus
 - `task_motor`
