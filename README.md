@@ -66,6 +66,8 @@ Vocês devem desenvolver o firmware como indicado a seguir:
 
 ![](firmware.png)
 
+- **O código base fornecido é o `RTOS-OLED-Xplained-Pro` já com o RTT adicionado no wizard.**
+
 Onde:
 
 - Botões:
