@@ -35,6 +35,8 @@ Notem que para fazermos o motor girar é preciso acionar as fases em sequência:
 
 Cada passo (passagem entre `1000` <- -> `0100`) aplica um movimento no rotor de alguns graus (no caso do motor que iremos usar `0,17578125`).
 
+****<span style="color:red">OBS:</span> **O tempo mínimo entre fases é 5ms, menos que isso o motor não consegue girar.**
+
 ### Interface
 
 A interface do motor de passos com o microcontrolador vai se dar através do acionamento de quatro pinos que é conectado a um módulo de potência:
