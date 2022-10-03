@@ -46,6 +46,8 @@ A interface do motor de passos com o microcontrolador vai se dar através do aci
 - Alimente o motor com +5v e GND.
 - Escolha quatro pinos do uC e conecte as fases.
 
+![image alt ><](labels.svg)
+
 ### Funcionalidade
 
 A entrega deve ser um sistema que permite controlarmos o motor de passos, fazendo-o girar em valores de ângulo pré estabelecidos. O controle do sistema será realizado via a placa OLED e seus botões (não vamos usar os LEDs). O display deve exibir qual foi a opção selecionada:
