@@ -110,4 +110,4 @@ Para acionar o motor o jeito mais fácil é: criar uma função que recebe uma m
 int mask_dir0[] = {1, 2, 4, 8};
 ```
 
-- RTT inicialize ele para gerar uma IRQ a cada `5ms`.
+- RTT inicialize ele para gerar uma IRQ a cada `10ms`.
