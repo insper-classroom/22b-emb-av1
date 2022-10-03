@@ -18,7 +18,7 @@ freeRTOS:
 
 Motor de passos:
 
-- Motor de passo 5V 28BYJ-48
+- Motor de passo **28BYJ-48**
   - Quatro fases
   - `0,17578125` graus por passo / `2048` passos para completar `360`º
 
@@ -26,13 +26,16 @@ Motor de passos:
 
 O motor de passo é um motor elétrico sem bobinas (_brushless_) que permite movimentarmos o rotor (a parte que gira) em passos. Os passos são valores em graus que dependem da construção do motor e de como ele é acionado.
 
-O `gif` a seguir ilustra um motor de passos em movimento, no caso ele possui quatro fases:
+O `gif` a seguir ilustra um motor de passos em movimento, no caso ele possui quatro fases. Ao lado está o `gif` que mostra o driver e o motor utilizados nessa avaliação:
 
-![](https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/StepperMotor.gif/400px-StepperMotor.gif)
+![image alt <](https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/StepperMotor.gif/400px-StepperMotor.gif)
+![image alt >](driver_motordepasso.gif)
 
 Notem que para fazermos o motor girar é preciso acionar as fases em sequência: `1000` -> `0100` -> `0010` -> `0001` e então repetir esse ciclo, X vezes até obtermos o ângulo de deslocamento esperado. Se o movimento for o oposto: `1000` -> `0001` -> `0010` -> `0100` -> ... o motor irá girar para o lado contrário.
 
 Cada passo (passagem entre `1000` <- -> `0100`) aplica um movimento no rotor de alguns graus (no caso do motor que iremos usar `0,17578125`).
+
+<span style="color:red">OBS:</span> **O tempo mínimo entre `fases` para esse motor é de `5ms`, menos que isso o motor não consegue girar.**
 
 ### Interface
 
@@ -70,8 +73,8 @@ Onde:
   - Responsável por ler a opcão do usuário via `xQueueModo`
   - Deve fazer a conta e traduzir ângulo em passos
   - Enviar a informação para a fila `xQueueSteps` no seguinte formato `(direção)(número de passos)`:
-    - exemplo para -90 -> -90 \* `0.17578125` -> `106` passos
-    - o dado que vai para fila é `-106`
+    - exemplo para -90 -> `(-90 / 0,17578125)` -> `-512` passos
+    - o dado que vai para fila é `-512`
   - Exibe no OLED o valor selecionado em graus
 - `task_motor`
 
@@ -88,10 +91,10 @@ Onde:
 
 ### Dicas
 
-1. Comece pelo OLED, `task_modo`, callback dos botões, `xQueueModo`
+1. Inicialize os pinos do motor, testando os movimentos, fazendo-o girar no sentiro horário e anti-horário
+1. Faça o teste do OLED, `task_modo`, callback dos botões, `xQueueModo`
 1. Crie a fila `xQueueSteps` e comece enviar o dado dos passos
 1. Crie a `task_motor`
-1. Inicialize os pinos do motor
 1. Receba os dados da fila `xQueueSteps` e acione o motor
 
 Para acionar o motor o jeito mais fácil é: criar uma função que recebe uma máscara com as fases e aciona o motor conforme o recebido.
