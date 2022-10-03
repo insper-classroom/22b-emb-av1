@@ -43,6 +43,9 @@ A interface do motor de passos com o microcontrolador vai se dar através do aci
 
 ![](uc-motor.png)
 
+- Alimente o motor com +5v e GND.
+- Escolha quatro pinos do uC e conecte as fases.
+
 ### Funcionalidade
 
 A entrega deve ser um sistema que permite controlarmos o motor de passos, fazendo-o girar em valores de ângulo pré estabelecidos. O controle do sistema será realizado via a placa OLED e seus botões (não vamos usar os LEDs). O display deve exibir qual foi a opção selecionada:
@@ -54,6 +57,8 @@ A entrega deve ser um sistema que permite controlarmos o motor de passos, fazend
 O diagrama a seguir ilustra a Interface homem-máquina (IHM) prevista:
 
 ![](oled.png)
+
+[![](https://img.youtube.com/vi/owp5Dj5Lu-U/maxresdefault.jpg)](https://youtu.be/owp5Dj5Lu-U)
 
 ### Firmware
 
@@ -103,4 +108,4 @@ Para acionar o motor o jeito mais fácil é: criar uma função que recebe uma m
 int mask_dir0[] = {1, 2, 4, 8};
 ```
 
-- RTT inicialize ele para gerar uma IRQ a cada `4ms`.
+- RTT inicialize ele para gerar uma IRQ a cada `5ms`.
