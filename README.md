@@ -57,9 +57,9 @@ A interface do motor de passos com o microcontrolador vai se dar através do aci
 
 A entrega deve ser um sistema que permite controlarmos o motor de passos, fazendo-o girar em valores de ângulo pré estabelecidos. O controle do sistema será realizado via a placa OLED e seus botões (não vamos usar os LEDs). O display deve exibir qual foi a opção selecionada:
 
-- BTN 1: Gira o motor 45° no sentido horário
+- BTN 1: Gira o motor 180° no sentido horário
 - BTN 2: Gira o motor 90° no sentido horário
-- BTN 3: Gira o motor 180° no sentido horário
+- BTN 3: Gira o motor 45° no sentido horário
 - 
 O diagrama a seguir ilustra a Interface homem-máquina (IHM) prevista:
 
